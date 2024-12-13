@@ -17,7 +17,6 @@ const corsOptions = {
     },
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
 };
 
 // CORS options
