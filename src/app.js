@@ -15,7 +15,7 @@ const corsOptions = {
             callback(new Error('Not allowed by CORS'));  // Deny the request
         }
     },
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],  // Customize allowed methods
+    methods: ['GET', 'POST','PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
     credentials: true,
 };
