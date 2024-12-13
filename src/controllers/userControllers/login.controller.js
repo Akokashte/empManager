@@ -21,8 +21,9 @@ const login = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        sameSite: 'None'
+        expires: new Date(Date.now() + 25892000000),
+        sameSite:None,
+        path: '/' 
     }
 
     // generate token for user

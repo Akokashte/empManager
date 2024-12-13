@@ -3,6 +3,13 @@ import { asyncHandler } from "../../utils/helper/AsyncHandler.js";
 
 const logout = asyncHandler(async (req, res) => {
     res.clearCookie("accessToken")
+    res.cookie('accessToken', '', {
+        expires: new Date(0), // Expire the cookie immediately
+        httpOnly: true,
+        secure: true, // if using HTTPS
+        sameSite: 'None', // ensure consistency with the original cookie settings
+        path: '/' // make sure this matches the path of the original cookie
+      });
     return res.status(200)
         .json(
             new ApiResponse(
