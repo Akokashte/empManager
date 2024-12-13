@@ -5,7 +5,7 @@ const logout = asyncHandler(async (req, res) => {
     res.clearCookie("accessToken",{
         httpOnly: true,
         secure: true, // Cookie should be set to Secure
-        sameSite: 'Lax', 
+        sameSite: 'None', 
         expires: new Date(0),
     })
 

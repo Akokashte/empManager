@@ -17,9 +17,9 @@ const signUp = asyncHandler(async (req, res) => {
     // set cookie options
     const options = {
         httpOnly: true,
-        secure: true,
         expires: new Date(Date.now() + 25892000000),
-        sameSite: 'Strict',
+        secure: true,
+        sameSite: 'None',
     }
 
     const accessToken = user.generateAccessToken();
