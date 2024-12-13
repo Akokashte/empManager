@@ -20,9 +20,8 @@ const login = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true,
+        // maxAge:"1d",
         expires: new Date(Date.now() + 25892000000),
-        sameSite:'Strict',
     }
 
     // generate token for user

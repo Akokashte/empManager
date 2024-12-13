@@ -2,8 +2,10 @@ import ApiResponse from "../../utils/helper/ApiResponse.js";
 import { asyncHandler } from "../../utils/helper/AsyncHandler.js";
 
 const logout = asyncHandler(async (req, res) => {
-    res.clearCookie("accessToken")
-    
+    res.clearCookie("accessToken",{
+        httpOnly:true
+    })
+
     return res.status(200)
         .json(
             new ApiResponse(
