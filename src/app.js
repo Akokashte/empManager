@@ -6,19 +6,27 @@ const app = express()
 
 const allowedOrigins = process.env.CORS_ORIGIN;
 
-const corsOptions = {
-    origin: (origin, callback) => {
-        // Check if the incoming origin is in the allowedOrigins list
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);  // Allow the request
-        } else {
-            callback(new Error('Not allowed by CORS'));  // Deny the request
-        }
-    },
-    methods: ['GET', 'POST','PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
-    credentials: true,
-};
+app.use(cors(
+    {
+        CORS_ORIGIN: "https://gilded-moxie-472b0e.netlify.app",
+        credentials: true,
+        methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
+    }
+))
+
+// const corsOptions = {
+//     origin: (origin, callback) => {
+//         // Check if the incoming origin is in the allowedOrigins list
+//         if (allowedOrigins.includes(origin) || !origin) {
+//             callback(null, true);  // Allow the request
+//         } else {
+//             callback(new Error('Not allowed by CORS'));  // Deny the request
+//         }
+//     },
+//     methods: ['GET', 'POST','PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
+//     allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
+//     credentials: true,
+// };
 
 // CORS options
 app.use(cors(corsOptions))
