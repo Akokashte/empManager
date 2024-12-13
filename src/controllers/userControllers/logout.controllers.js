@@ -2,13 +2,8 @@ import ApiResponse from "../../utils/helper/ApiResponse.js";
 import { asyncHandler } from "../../utils/helper/AsyncHandler.js";
 
 const logout = asyncHandler(async (req, res) => {
-    // res.clearCookie("accessToken")
-    res.clearCookie('accessToken', '', {
-        expires: new Date(0), // Expire the cookie immediately
-        httpOnly: true,
-        secure: true, // if using HTTPS
-        sameSite: 'None', // ensure consistency with the original cookie settings
-      });
+    res.clearCookie("accessToken")
+    
     return res.status(200)
         .json(
             new ApiResponse(

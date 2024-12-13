@@ -19,8 +19,7 @@ const signUp = asyncHandler(async (req, res) => {
         httpOnly: true,
         secure: true,
         expires: new Date(Date.now() + 25892000000),
-        sameSite: 'None',
-        path: '/' 
+        sameSite: 'Strict',
     }
 
     const accessToken = user.generateAccessToken();
