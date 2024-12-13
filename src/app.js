@@ -23,7 +23,6 @@ const corsOptions = {
 // CORS options
 app.use(cors(corsOptions))
 
-
 //It is the process of converting a JSON string to a JSON object for data manipulation
 app.use(express.json())
 
