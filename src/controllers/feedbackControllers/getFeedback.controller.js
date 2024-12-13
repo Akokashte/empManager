@@ -11,8 +11,9 @@ const getFeedback = asyncHandler(async (req, res) => {
         .json(
             new ApiResponse(
                 200,
-                {   isFeedbackFetched:true,
-                    feedbackData
+                {
+                    isFeedbackFetched: true,
+                    feedbacks: feedbackData
                 },
                 message
             )
