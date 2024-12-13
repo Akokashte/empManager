@@ -6,13 +6,14 @@ const app = express()
 
 const allowedOrigins = process.env.CORS_ORIGIN;
 
-app.use(cors(
-    {
-        CORS_ORIGIN: "https://gilded-moxie-472b0e.netlify.app",
+app.use(
+    cors({
+        origin: allowedOrigins,
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
-        methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
-    }
-))
+    })
+)
+
 
 // const corsOptions = {
 //     origin: (origin, callback) => {
