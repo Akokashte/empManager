@@ -18,17 +18,21 @@ const getFeedbackOfCurrentUser = asyncHandler(async (req, res) => {
 
     const feedbacksOfCurrentUser = await Feedback.find({ userId: user?._id });
 
-    if (feedbacksOfCurrentUser.length === 0) {
-        return res.
-            status(200)
-            .json(
-                new ApiResponse(
-                    200,
-                    "",
-                    "No feedbacks posted yet !"
-                )
-            )
-    }
+    // if (feedbacksOfCurrentUser.length === 0) {
+    //     return res.
+    //         status(200)
+    //         .json(
+    //             new ApiResponse(
+    //                 200,
+    //                 {
+    //                     isFeedbackFetched: true,
+    //                     feedbacks: []
+    //                 }
+    //                 ,
+    //                 "No feedbacks posted yet !"
+    //             )
+    //         )
+    // }
 
     return res.
         status(200)
