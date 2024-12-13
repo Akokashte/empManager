@@ -9,15 +9,15 @@ const app = express()
 // const corsOptions = {
 //     origin: (origin, callback) => {
 //         // Check if the incoming origin is in the allowedOrigins list
-//         if (allowedOrigins.includes(origin) || !origin) {
+//         if (!origin || allowedOrigins.includes(origin)) {
 //             callback(null, true);  // Allow the request
 //         } else {
 //             callback(new Error('Not allowed by CORS'));  // Deny the request
 //         }
 //     },
+//     credentials: true,
 //     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
 //     allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
-//     credentials: true,
 // };
 
 // CORS options

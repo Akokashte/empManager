@@ -19,6 +19,8 @@ const login = asyncHandler(async (req, res) => {
     }
 
     const options = {
+        httpOnly: true,
+        secure: true,
         expires: new Date(Date.now() + 25892000000),
     }
 
