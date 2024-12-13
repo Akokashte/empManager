@@ -6,15 +6,6 @@ const app = express()
 
 const allowedOrigins = process.env.CORS_ORIGIN;
 
-// app.use(
-//     cors({
-//         origin: allowedOrigins,
-//         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//         credentials: true,
-//     })
-// )
-
-
 const corsOptions = {
     origin: (origin, callback) => {
         // Check if the incoming origin is in the allowedOrigins list
