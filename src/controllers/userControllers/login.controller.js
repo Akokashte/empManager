@@ -23,7 +23,6 @@ const login = asyncHandler(async (req, res) => {
         secure: true,
         expires: new Date(Date.now() + 25892000000),
         sameSite:None,
-        path: '/' 
     }
 
     // generate token for user

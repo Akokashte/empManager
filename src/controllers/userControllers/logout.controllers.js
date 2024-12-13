@@ -8,7 +8,6 @@ const logout = asyncHandler(async (req, res) => {
         httpOnly: true,
         secure: true, // if using HTTPS
         sameSite: 'None', // ensure consistency with the original cookie settings
-        path: '/' // make sure this matches the path of the original cookie
       });
     return res.status(200)
         .json(
