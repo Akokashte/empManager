@@ -13,7 +13,7 @@ const getFeedback = asyncHandler(async (req, res) => {
                 200,
                 {
                     isFeedbackFetched: true,
-                    feedbacks: feedbackData
+                    feedbackData
                 },
                 message
             )
