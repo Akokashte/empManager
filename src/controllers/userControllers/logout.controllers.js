@@ -4,9 +4,9 @@ import { asyncHandler } from "../../utils/helper/AsyncHandler.js";
 const logout = asyncHandler(async (req, res) => {
     res.clearCookie("accessToken",{
         httpOnly: true,
-        secure: true, // Cookie should be set to Secure
-        sameSite: 'None', 
         expires: new Date(0),
+        secure: true,
+        sameSite: 'None',
     })
 
     return res.status(200)
