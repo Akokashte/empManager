@@ -6,31 +6,31 @@ const app = express()
 
 const allowedOrigins = process.env.CORS_ORIGIN;
 
-app.use(
-    cors({
-        origin: allowedOrigins,
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        credentials: true,
-    })
-)
+// app.use(
+//     cors({
+//         origin: allowedOrigins,
+//         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//         credentials: true,
+//     })
+// )
 
 
-// const corsOptions = {
-//     origin: (origin, callback) => {
-//         // Check if the incoming origin is in the allowedOrigins list
-//         if (allowedOrigins.includes(origin) || !origin) {
-//             callback(null, true);  // Allow the request
-//         } else {
-//             callback(new Error('Not allowed by CORS'));  // Deny the request
-//         }
-//     },
-//     methods: ['GET', 'POST','PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
-//     allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
-//     credentials: true,
-// };
+const corsOptions = {
+    origin: (origin, callback) => {
+        // Check if the incoming origin is in the allowedOrigins list
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);  // Allow the request
+        } else {
+            callback(new Error('Not allowed by CORS'));  // Deny the request
+        }
+    },
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Customize allowed headers
+    credentials: true,
+};
 
 // CORS options
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 
 //It is the process of converting a JSON string to a JSON object for data manipulation
