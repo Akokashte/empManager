@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express()
 
-const allowedOrigins = process.env.CORS_ORIGIN;
+const allowedOrigins = ["https://emp-manager-frontend.vercel.app"];
 
 const corsOptions = {
     origin: (origin, callback) => {
