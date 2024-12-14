@@ -4,8 +4,8 @@ import cors from 'cors';
 
 const app = express()
 
-// const allowedOrigins = ["https://emp-manager-frontend.vercel.app"];
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["https://emp-manager-frontend.vercel.app"];
+// const allowedOrigins = ["http://localhost:3000"];
 
 const corsOptions = {
     origin: (origin, callback) => {
