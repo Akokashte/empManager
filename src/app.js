@@ -25,7 +25,7 @@ const allowedOrigins = "https://playful-trifle-000ae4.netlify.app";
 // app.use(cors(corsOptions))
 app.use(
     cors({
-        origin: allowedOrigins,
+        origin: process.env.CORS_ORIGIN,
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
     })
