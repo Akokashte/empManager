@@ -5,24 +5,31 @@ import cors from 'cors';
 const app = express()
 
 // const allowedOrigins = ["https://emp-manager-frontend.vercel.app"];
-const allowedOrigins = ["https://playful-trifle-000ae4.netlify.app"];
+const allowedOrigins = "https://playful-trifle-000ae4.netlify.app";
 // const allowedOrigins = ["http://localhost:3000"];
 
-const corsOptions = {
-    origin: (origin, callback) => {
-        // Check if the incoming origin is in the allowedOrigins list
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);  // Allow the request
-        } else {
-            callback(new Error('Not allowed by CORS'));  // Deny the request
-        }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
-};
+// const corsOptions = {
+//     origin: (origin, callback) => {
+//         // Check if the incoming origin is in the allowedOrigins list
+//         if (!origin || allowedOrigins.includes(origin)) {
+//             callback(null, true);  // Allow the request
+//         } else {
+//             callback(new Error('Not allowed by CORS'));  // Deny the request
+//         }
+//     },
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],  // Customize allowed methods
+// };
 
 // CORS options
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
+app.use(
+    cors({
+        origin: allowedOrigins,
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials: true,
+    })
+);
 
 //It is the process of converting a JSON string to a JSON object for data manipulation
 app.use(express.json())
